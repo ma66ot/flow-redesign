@@ -1,0 +1,150 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 14.7.2014, 10:56:43
+    Author     : ma66ot
+*/
+@import "elements.less";
+@import "definitions.less";
+
+.input-row{
+  margin-bottom: 8px;
+
+  label{
+    display: block;
+    padding-left: 40px;
+    font-size: 14px;
+    font-family: @open-sans;
+  }
+  .info{
+    display: block;
+    width: 28px;
+    height: 28px;
+    margin: 3px;
+    float: left;
+    background-image: url("@{img}/tooltip-icon.png");
+  }
+  .validation_checkmark{
+    display: block;
+    width: 21px;
+    height: 20px;
+    margin: 7px;
+    float: left;
+    background-image: url("@{img}/validation-icon.png");
+  }
+  .validation_msg{
+    clear: both;
+    margin-left: 40px;
+    color: @light-red;
+    font-size: 12px;
+    margin-top: 6px;
+  }
+
+  .text{
+    font-family: @open-sans;
+    font-size: 17px;
+    padding: 0 8px 0 8px;
+  }
+  input[type=text]{
+    outline: none;
+    display: block;
+    float: left;
+    height: 34px;
+    margin: 0;
+    border: none;
+    margin-left: 6px;
+    width: 285px;
+    background-color: @neutral;
+    .rounded(6px);
+
+    &.datepicker{
+      background-image: url("@{img}/datepicker-icon.png");
+      background-position: right center;
+      background-repeat: no-repeat;
+      cursor: default;
+    }
+    &.datepicker:hover{
+      background-image: url("@{img}/datepicker-icon-hover.png");
+    }
+    &.focus{
+      border: 2px solid @green;
+      .transition(0.2s);
+    }
+    &.ng-pristine{
+      background-color: @neutral !important;
+      border: none;
+    }
+    &.ng-valid{
+      background-color: @valid;
+    }
+    &.ng-invalid{
+      background-color: @invalid;
+    }
+  }
+  .styled-check{
+    float: left;
+    margin-left: 30px;
+    
+    .radio-label{
+      float: right;
+      line-height: 34px;
+      padding-left: 10px;
+      height: 34px;
+    }
+    input[type=radio], input[type=checkbox]{
+      margin: 0;
+      height: 34px;
+    } 
+  }
+  .styled-select{
+    position: relative;
+    width: 285px;
+    height: 34px;
+    overflow: hidden;
+    float: left;
+    margin-left: 6px;
+
+    span{
+      pointer-events: none;
+      z-index: 10;
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      height: 34px;
+      width: 39px;
+      background: url("@{img}/select-arrow.png");
+      background-repeat: no-repeat;
+      background-position: right center;
+      line-height: 34px;
+      padding-left: 8px;
+    }
+    select{
+      z-index: 9;
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      height: 34px;
+      width: 285px;
+      border: none;
+      outline: none;
+      .rounded(6px);
+
+      &.ng-pristine{
+        background-color: @neutral !important;
+        border: none;
+      }
+      &.ng-valid{
+        background-color: @valid;
+      }
+      &.ng-invalid{
+        background-color: @invalid;
+      }
+    }
+    &:hover span{
+      background-image: url("@{img}/select-arrow-hover.png")
+    }
+  }
+}

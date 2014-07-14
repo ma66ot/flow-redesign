@@ -1,0 +1,117 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 9.7.2014, 15:53:38
+    Author     : ma66ot
+*/
+@import "elements.less";
+@import "definitions.less";
+
+/* HEADER */
+
+header{
+  padding-top: 32px;
+
+  .logo{
+
+    a{
+      img{
+
+      }
+    }
+  }
+  .progress-strip{
+
+    ul{
+      list-style: none;
+      height: 44px;
+      padding-top: 6px;
+      li{
+        display: inline-block;
+        text-align: center;
+        height: 33px;
+        background-repeat: no-repeat;
+        background-position: right;
+        margin: 0;
+        line-height: 33px;
+        position: relative;
+        margin-left: -20px;
+
+        a{
+          color: inherit;
+          text-decoration: none;
+          display: block;
+          float: left;
+          height: 100%;
+          padding: 0 15px 0 35px;
+          &:hover{
+            text-decoration: none;
+            color: inherit;
+          }
+        }
+        &:after{
+          content: " ";
+          display: inline-block;
+          float: left;
+          width: 18px;
+          height: 33px;
+          background-image: url("@{img}/progress-strip-arrow.png");
+        }
+        &.active{
+          color: #fff;
+          &:after{
+            background-image: url("@{img}/progress-strip-arrow-g.png");
+          }
+          a{
+            background-color: @green;
+          }
+        }
+        &.valid{
+          color: @green;
+          &:after{
+            background-image: url("@{img}/progress-strip-arrow-lg.png");
+          }
+          a{
+            background-color: @light-green;
+          }
+        }
+        &:first-child{
+          a{
+            padding-left: 15px;
+          }
+        }
+        &:last-child{
+          &:after{
+            display: none;
+          }
+          a{
+            padding: 0 0 0 30px;
+          }
+        }
+        &.first{
+          z-index: 5;
+        }
+        &.second{
+          z-index: 4;
+        }
+        &.third{
+          z-index: 3;
+        }
+        &.fourth{
+          z-index: 2;
+        }
+      }
+    }
+  }
+  .commerce-cert{
+    text-align: center;
+    a{
+      img{
+
+      }
+    }
+  }
+}

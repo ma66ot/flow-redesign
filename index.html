@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Flow 2.0 redo</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet/less" type="text/css" href="less/elements.less" />
+    <link rel="stylesheet/less" type="text/css" href="less/style.less" />
+    <link rel="stylesheet/less" type="text/css" href="less/definitions.less" />
+    <link rel="stylesheet/less" type="text/css" href="less/header.less" />
+    <link rel="stylesheet/less" type="text/css" href="less/content.less" />
+    <link rel="stylesheet/less" type="text/css" href="less/forms.less" />
+    <link rel="stylesheet/less" type="text/css" href="less/control-bar.less" />
+    <link rel="stylesheet/less" type="text/css" href="less/footer.less" />
+    <link rel="stylesheet/less" type="text/css" href="less/general.less" />
+    <link rel="stylesheet/less" type="text/css" href="less/selection-strip.less" />
+    <link href='http://fonts.googleapis.com/css?family=Handlee|Open+Sans:400,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+    <div class="container">
+
+      <header class="row">
+        <div class="logo col-md-3">
+          <a href=""><img src="img/iforsikring-logo.png" alt="logo" /></a>
+        </div>
+        <div class="progress-strip col-lg-offset-1 col-lg-6 col-md-offset-0 col-md-7">
+          <ul>
+            <li class="first valid"><a href="#">1. Forsikringer</a></li>
+            <li class="second valid"><a href="#">2. Oplysninger</a></li>
+            <li class="third active"><a href="#">3. Personlig info</a></li>
+            <li class="fourth"><a href="#">Farding</a></li>
+          </ul>
+        </div>
+        <div class="commerce-cert col-md-offset-1 col-md-1">
+          <a href=""><img src="img/certificat.png" alt="cert logo" /></a>
+        </div>
+      </header>
+
+      <div class="selection-strip row">
+        <div class="selected-prod">
+          <div class="text">
+            You chose this insurances. <a href="#">Add more</a>
+          </div>
+          <div class="icon-holder">
+            <div class="prod-icon selected big">
+              <div class="checkmark"></div>
+              <div class="icon car"></div>
+              <div class="second-prod"></div>
+            </div>
+            <div class="prod-icon selected big">
+              <div class="checkmark"></div>
+              <div class="icon car"></div>
+              <div class="second-prod"></div>
+            </div>
+          </div>
+        </div>
+        <div class="suggested-prod">
+          <div class="text">
+            We would also recomend:
+          </div>
+          <div class="icon-holder">
+            <div class="prod-icon normal big transparent">
+              <div class="checkmark"></div>
+              <div class="icon car"></div>
+              <div class="second-prod"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content row">
+
+        <div class="col-md-6 col-sm-6 col-xs-12 form-hold left">
+          <div class="box grey">
+            <div class="box-title">
+              Your information:
+            </div><!-- /box-title -->
+
+            <div class="box-elements">
+
+              <div class="input-row">
+                <label for="car_name">What is the brand of your car?</label>
+                <span class="info" data-toggle="tooltip" title="Tooltip for the car name"></span>
+                <input type="text" id="car_name" name="car_name" class="text" />
+                <span class="validation_checkmark"></span>
+                <div class="validation_msg">Please insert car name.</div>
+              </div><!-- /input-row -->
+
+              <div class="input-row">
+                <label for="car_year">Choose year</label>
+                <span class="info" data-toggle="tooltip" title="Tooltip for the car name"></span>
+                <div class="styled-select">
+                  <select name="car_year" id="car_year" class="text ng-pristine">
+                    <option value="">Choose year</option>
+                    <option value="0">1975</option>
+                    <option value="1">1984</option>
+                  </select>
+                  <span></span>
+                </div>
+                <span class="validation_checkmark"></span>
+                <div class="validation_msg">Please insert car name.</div>
+              </div><!-- /input-row -->
+
+              <div class="input-row">
+                <label for="car_date">Choose date of purchase</label>
+                <span class="info" data-toggle="tooltip" title="Tooltip for the datepicer"></span>
+                <input type="text" id="car_date" class="text datepicker"/>
+                <span class="validation_checkmark"></span>
+                <div class="validation_msg"></div>
+              </div><!-- /input-row -->
+              
+              <div class="input-row">
+                <label>Did you have an insurance before?</label>
+                <span class="info" data-toggle="tooltip" title="Tooltip for radio buttons"></span>
+                <div class="styled-check">
+                  <input type="radio" name="insurance" id="radio1" /><label class="radio-label" for="radio1">Yes</label>
+                </div>
+                <div class="styled-check">
+                  <input type="radio" name="insurance" id="radio2" /><label class="radio-label" for="radio2">No</label>
+                </div>
+              </div><!-- /input-row -->
+
+            </div><!-- /box-elements -->
+
+            <div class="box-divider"></div><!-- /box-divider -->
+
+            <div class="box-elements">
+
+            </div><!-- /box-elements -->
+
+          </div><!-- /box -->
+        </div><!-- /form-hold -->
+
+        <div class="col-md-6 col-sm-6 col-xs-12 form-hold right">
+          <div class="box green">
+            <div class="box-title">
+              Insurance information:
+            </div><!-- /box-title -->
+            <div class="box-divider"></div>
+          </div><!-- /box -->
+        </div><!-- /form-hold -->
+
+      </div><!-- /content -->
+
+      <div class="control-bar row">
+        <div class="col-md-3 col-sm-3 col-xs-6 holder-back">
+          <button class="btn back">
+            <span>Back</span>
+          </button>
+        </div><!-- /holder-back -->
+        <div class="col-md-6 col-sm-6 hidden-xs holder-status">
+          <h3>Chosen 3 of 14 insurances</h3>
+          <p>Save more by selecting more options</p>
+        </div><!-- /holder-status -->
+        <div class="col-md-3 col-sm-3 col-xs-6 holder-next">
+          <button class="btn arrow">
+            <span>Go on</span>
+          </button>
+        </div><!-- /holder-next -->
+      </div><!-- /control-bar -->
+
+      <footer class="row">
+
+        <div class="finalize">
+          <div class="col-md-9 col-sm-7 col-xs-7 text">
+            Ready to save some money!
+          </div>
+          <div class="col-md-3 col-sm-5 col-xs-5 holder-finalize">
+            <button class="btn arrow">
+              <span>Finalize request</span>
+            </button>
+          </div>
+          <div class="clearfix"></div>
+        </div><!-- /finalize -->
+
+        <div class="save-later">
+          <div class="col-md-4 col-sm-4 col-xs-4 holder-later">
+            <button class="btn later"><span>Save for later</span></button>
+          </div>
+          <div class="col-md-8 col-sm-8 col-xs-8 text">
+            Not ready to finalize yet? <br />
+            You can save your information for later, and we will send you a link with all the required information to your email.
+          </div>
+          <div class="clearfix"></div>
+        </div><!-- /save-later -->
+
+      </footer>
+
+    </div>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/1.7.3/less.min.js"></script>
+    <script src="//code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/pointer-events.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+  </body>
+</html>

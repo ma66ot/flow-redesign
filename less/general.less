@@ -1,0 +1,181 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 9.7.2014, 16:00:46
+    Author     : ma66ot
+*/
+@import "elements.less";
+@import "definitions.less";
+
+/* GENERAL ELEMENTS - BUTTONS, ICONS ... */
+
+//components
+.btn{
+  padding: 9px 15px 9px 15px;
+  border: none;
+  min-width: 150px;
+  height: 40px;
+  outline: none !important;
+
+  .rounded(8px);
+
+  &.normal{
+    color: @button-normal-color;
+    background-color: @button-yellow;
+
+    &:hover{
+      background-color: @button-yellow-hover;
+      .transition(0.1s);
+    }
+  }
+  &.arrow{
+    color: @button-normal-color;
+    background-color: @button-yellow;
+
+    &:before{
+      float: right;
+      margin-left: 10px;
+      background-color: #D7A500;
+      background-image: url("@{img}/btn-arrow-right.png");
+      .btnarrow();
+    }
+    &:hover{
+      background-color: @button-yellow-hover;
+      .transition(0.1s);
+
+      &:before{
+        background-color: @green;
+      }
+    }
+  }
+  &.back{
+    color: @button-back-color;
+    background-color: @button-grey; 
+
+    &:before{
+      float: left;
+      margin-right: 10px;
+      background-color: #DFDFDF;
+      background-image: url("@{img}/btn-arrow-left.png");
+      .btnarrow();
+    }
+    &:hover:before{
+      background-color: @green;
+      .transition(0.1s);
+    }
+  }
+  &.later{
+    color: #000;
+    border: 1px solid #D1E1F1;
+    .gradient();
+
+    &:before{
+      float: left;
+      margin-right: 10px;
+      background-color: #fff;
+      background-image: url("@{img}/btn-save-icon.png");
+      .btnarrow();
+    }
+  }
+
+  span{
+    display: inline;
+    font-family: @arial;
+    font-size: 15px;
+    line-height: 22px;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+}
+
+.prod-icon{
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  .rounded(50%);
+
+  &.big{
+    padding: 1px;
+    border: 2px solid transparent;
+    background-color: transparent;
+
+    .icon{
+      width: 51px;
+      height: 51px;
+    }
+  }
+  &.small{
+    padding: 1px;
+    border: 2px solid transparent;
+    background-color: transparent;
+    .icon{
+      width: 41px;
+      height: 41px;
+      background-size: 41px 41px;
+    }
+  }
+  &.normal{
+    .checkmark{
+      display: none;
+    }
+    .icon{
+      background-color: @icon-grey;
+      &:hover{
+        background-color: @icon-light-green;
+        .transition(0.2s);
+      }
+    }
+  }
+  &.selected {
+    .icon{
+      background-color: @icon-green;
+    }
+  }
+  &.valid{
+    .checkmark{
+      position: absolute;
+      top: 3px;
+      right: 3px;
+      width: 13px;
+      height: 13px;
+      background-image: url("../img/checkmark.png");
+    }
+  }
+  &.suggested{
+    padding: 1px;
+    border: 2px solid @blue;
+    .transition(0.5s);
+  }
+  &.second{
+    .second-prod{
+      position: absolute;
+      width: 18px;
+      height: 15px;
+      bottom: -5px;
+      left: 50%;
+      background-image: url("@{img}/second-prod.png");
+    }
+  }
+  &.transparent{
+    .icon{
+      .opacity(0.5);
+      &:hover{
+        .opacity(1);
+      } 
+    }
+  }
+  .icon{
+    .rounded(50%);
+  }
+  //set by product 
+  .car{
+    background-image: url("@{img}/car.png");
+  }
+  .boat{
+    background-image: url("@{img}/boat.png");
+  }
+}
+
