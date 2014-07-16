@@ -10,7 +10,7 @@ $(document).ready(function() {
   });
 
   $(document).ready(function() {
-    $(".tooltip").tooltip();
+    $(".info.active").tooltip();
   });
   
   PointerEventsPolyfill.initialize({});

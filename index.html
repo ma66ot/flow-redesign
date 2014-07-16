@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="sliderDemoApp">
   <head>
     <title>Flow 2.0 redo</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+     <link rel="stylesheet" href="css/jquery-ui.css">
     <link rel="stylesheet/less" type="text/css" href="less/elements.less" />
     <link rel="stylesheet/less" type="text/css" href="less/style.less" />
     <link rel="stylesheet/less" type="text/css" href="less/definitions.less" />
@@ -17,7 +19,7 @@
     <link rel="stylesheet/less" type="text/css" href="less/selection-strip.less" />
     <link href='http://fonts.googleapis.com/css?family=Handlee|Open+Sans:400,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
   </head>
-  <body>
+  <body ng-controller="sliderDemoCtrl">
     <div class="container">
 
       <header class="row">
@@ -70,77 +72,114 @@
       </div>
 
       <div class="content row">
+        <form name="development">
 
-        <div class="col-md-6 col-sm-6 col-xs-12 form-hold left">
-          <div class="box grey">
-            <div class="box-title">
-              Your information:
-            </div><!-- /box-title -->
+          <div class="col-md-6 col-sm-6 col-xs-12 form-hold left">
+            <div class="box grey">
+              <div class="box-title">
+                Your information:
+              </div><!-- /box-title -->
 
-            <div class="box-elements">
+              <div class="box-elements">
 
-              <div class="input-row">
-                <label for="car_name">What is the brand of your car?</label>
-                <span class="info" data-toggle="tooltip" title="Tooltip for the car name"></span>
-                <input type="text" id="car_name" name="car_name" class="text" />
-                <span class="validation_checkmark"></span>
-                <div class="validation_msg">Please insert car name.</div>
-              </div><!-- /input-row -->
+                <div class="input-row">
+                  <label for="car_name">What is the brand of your car?</label>
+                  <span class="info active" data-toggle="tooltip" title="Tooltip for the car name"></span>
+                  <input type="text" id="car_name" name="car_name" class="text big" ng-model="jaka" required/>
+                  <span class="validation_checkmark"></span>
+                  <div class="validation_msg">Please insert car name.</div>
+                </div><!-- /input-row -->
 
-              <div class="input-row">
-                <label for="car_year">Choose year</label>
-                <span class="info" data-toggle="tooltip" title="Tooltip for the car name"></span>
-                <div class="styled-select">
-                  <select name="car_year" id="car_year" class="text ng-pristine">
-                    <option value="">Choose year</option>
-                    <option value="0">1975</option>
-                    <option value="1">1984</option>
-                  </select>
-                  <span></span>
+                <div class="input-row">
+                  <label for="car_year">Choose year</label>
+                  <span class="info active" data-toggle="tooltip" title="Tooltip for the car name"></span>
+                  <div class="styled-select">
+                    <select name="car_year" id="car_year" class="text ng-pristine">
+                      <option value="">Choose year</option>
+                      <option value="0">1975</option>
+                      <option value="1">1984</option>
+                    </select>
+                    <span></span>
+                  </div>
+                  <span class="validation_checkmark"></span>
+                  <div class="validation_msg">Please insert car name.</div>
+                </div><!-- /input-row -->
+
+                <div class="input-row">
+                  <label for="car_date">Choose date of purchase</label>
+                  <span class="info" data-toggle="tooltip" title="Tooltip for the datepicer"></span>
+                  <input type="text" id="car_date" class="text datepicker big" ng-ui-date/>
+                  <span class="validation_checkmark"></span>
+                  <div class="validation_msg"></div>
+                </div><!-- /input-row -->
+
+                <div class="input-row">
+                  <label>Did you have an insurance before?</label>
+                  <span class="info" data-toggle="tooltip" title="Tooltip for radio buttons"></span>
+                  <div class="styled-check">
+                    <input type="radio" name="rad" id="radio1" class="css-checkbox" />
+                    <label for="radio1" class="css-label radGroup1 radGroup1">Option 1</label>
+                  </div>
+                  <div class="styled-check">
+                    <input type="radio" name="rad" id="radio2" class="css-checkbox" />
+                    <label for="radio2" class="css-label radGroup1 radGroup1">Option 2</label>
+                  </div>
+                  <div class="clearfix"></div>
+                </div><!-- /input-row -->
+
+              </div><!-- /box-elements -->
+
+              <div class="box-divider"></div><!-- /box-divider -->
+
+              <div class="box-elements">
+
+                <div class="input-row">
+                  <label for="car_desc">What is the brand of your car?</label>
+                  <span class="info" data-toggle="tooltip" title="Tooltip for the car name"></span>
+                  <textarea name="car_desc" id="car_desc"></textarea>
+                  <span class="validation_checkmark"></span>
+                  <div class="validation_msg">Please insert car name.</div>
+                </div><!-- /input-row -->
+
+                <div class="input-row">
+                  <label for="slider1">Step slider with event listeners (see console log)</label>
+                  <span class="info active" data-toggle="tooltip" title="Tooltip for the car name"></span>
+                  <div ui-slider min="0" max="200000" ng-model="slider1"></div>
+                  <input name="slider1" id="slider1" type="text" ng-model="slider1" class="slider-input" ng-init="slider1 = 0" />	
+                  <div class="clearfix"></div>
+                </div><!-- /input-row -->
+                
+                <div class="input-row">
+                  
                 </div>
-                <span class="validation_checkmark"></span>
-                <div class="validation_msg">Please insert car name.</div>
-              </div><!-- /input-row -->
 
-              <div class="input-row">
-                <label for="car_date">Choose date of purchase</label>
-                <span class="info" data-toggle="tooltip" title="Tooltip for the datepicer"></span>
-                <input type="text" id="car_date" class="text datepicker"/>
-                <span class="validation_checkmark"></span>
-                <div class="validation_msg"></div>
-              </div><!-- /input-row -->
-              
-              <div class="input-row">
-                <label>Did you have an insurance before?</label>
-                <span class="info" data-toggle="tooltip" title="Tooltip for radio buttons"></span>
-                <div class="styled-check">
-                  <input type="radio" name="insurance" id="radio1" /><label class="radio-label" for="radio1">Yes</label>
+              </div><!-- /box-elements -->
+
+            </div><!-- /box -->
+          </div><!-- /form-hold -->
+
+          <div class="col-md-6 col-sm-6 col-xs-12 form-hold right">
+            <div class="box green">
+              <div class="box-title">
+                Insurance information:
+              </div><!-- /box-title -->
+              <div class="box-elements">
+                
+                <div class="input-row">
+                  <label for="test"></label>
+                  <span class="info active"></span>
+                  <div class="input-overlay">
+                    <input type="text" id="test" class="medium" />
+                    <span>m<sup>2</sup></span>
+                  </div>
+                  <div class="clearfix"></div>
                 </div>
-                <div class="styled-check">
-                  <input type="radio" name="insurance" id="radio2" /><label class="radio-label" for="radio2">No</label>
-                </div>
-              </div><!-- /input-row -->
+                
+              </div><!-- /box-elements -->
+            </div><!-- /box -->
+          </div><!-- /form-hold -->
 
-            </div><!-- /box-elements -->
-
-            <div class="box-divider"></div><!-- /box-divider -->
-
-            <div class="box-elements">
-
-            </div><!-- /box-elements -->
-
-          </div><!-- /box -->
-        </div><!-- /form-hold -->
-
-        <div class="col-md-6 col-sm-6 col-xs-12 form-hold right">
-          <div class="box green">
-            <div class="box-title">
-              Insurance information:
-            </div><!-- /box-title -->
-            <div class="box-divider"></div>
-          </div><!-- /box -->
-        </div><!-- /form-hold -->
-
+        </form>
       </div><!-- /content -->
 
       <div class="control-bar row">
@@ -186,12 +225,17 @@
         </div><!-- /save-later -->
 
       </footer>
-
     </div>
     <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/1.7.3/less.min.js"></script>
     <script src="//code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script>
+    <script src="//code.jquery.com/ui/1.10.4/jquery-ui.min.js" type="text/javascript"></script>
+    <script data-require="angular.js@1.0.x" src="http://code.angularjs.org/1.2.20/angular.min.js" data-semver="1.2.20"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular-touch.min.js"></script>
+    <script type="text/javascript" src="js/angular-slider.js"></script>
+    <script type="text/javascript" src="js/angular-date.js"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/pointer-events.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
   </body>
 </html>
