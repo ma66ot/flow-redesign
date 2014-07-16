@@ -12,7 +12,7 @@ and open the template in the editor.
 
 .input-row{
   margin-bottom: 8px;
-  
+
   .big{
     width: 285px;
   }
@@ -22,7 +22,7 @@ and open the template in the editor.
   .small{
     width: 68px;
   }
-  
+
   label{
     display: block;
     padding-left: 40px;
@@ -81,13 +81,13 @@ and open the template in the editor.
     &.datepicker:hover{
       background-image: url("@{img}/datepicker-icon-hover.png");
     }
-    &.focus{
+    &:focus{
       border: 2px solid @green;
       .transition(0.2s);
     }
     &.ng-pristine{
       background-color: @neutral;
-      border: none;
+
     }
     &.ng-valid{
       background-color: @valid;
@@ -120,7 +120,7 @@ and open the template in the editor.
     float: left;
     margin-left: 6px;
 
-    span{
+    svg{
       pointer-events: none;
       z-index: 10;
       position: absolute;
@@ -172,10 +172,12 @@ and open the template in the editor.
     width: 285px;
     background-color: @neutral;
     resize: none;
-    font-size: 17px;
-    font-family: @open-sans;
-    padding: 8px;
+    padding: 8px !important;
     .rounded(6px);
+    &:focus{
+      border: 2px solid @green;
+      .transition(0.2s);
+    }
   }
 
   .ui-slider{
@@ -184,6 +186,7 @@ and open the template in the editor.
     float: left;
     margin: 15px 0px 15px 16px;
     border: 1px solid @green;
+    .rounded(0px);
 
     a.ui-slider-handle{
       top: -15px;
@@ -211,8 +214,6 @@ and open the template in the editor.
     position: relative;
     input{
       padding-left: 8px;
-      font-size: 17px;
-      font-family: @open-sans;
     }
     span{
       position: absolute;

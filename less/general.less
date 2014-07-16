@@ -80,7 +80,13 @@ and open the template in the editor.
       .btnarrow();
     }
   }
-
+  &.tip{
+    color: #000;
+    border: 1px solid #D1E1F1;
+    .gradient();
+    min-width: 0px;
+    width: 100% !important;
+  }
   span{
     display: inline;
     font-family: @arial;
@@ -133,6 +139,14 @@ and open the template in the editor.
     .icon{
       background-color: @icon-green;
     }
+    .hand{
+      position: absolute;
+      width: 20px;
+      height: 22px;
+      bottom: -5px;
+      left: 58%;
+      background-image: url("@{img}/tip-hand.png");
+    }
   }
   &.valid{
     .checkmark{
@@ -178,4 +192,13 @@ and open the template in the editor.
     background-image: url("@{img}/boat.png");
   }
 }
+
+.car-icon{
+  min-height: 51px;
+  img{
+    max-height: 65px;
+    max-width: 120px;
+  }
+}
+
 

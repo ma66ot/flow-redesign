@@ -1,0 +1,134 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 16.7.2014, 11:52:46
+    Author     : ma66ot
+*/
+
+@import "elements.less";
+@import "definitions.less";
+
+.selection-widget{
+  position: fixed;
+  z-index: 2000;
+  top: 50px;
+  left:-390px;
+  width: 416px;
+
+  &.active{
+    left: 0px;
+    .transition(0.6s);
+  }
+
+  .selection{
+    float:left;
+    width: 390px;
+    padding: 8px 0 8px 0;
+    .border-radius(8px, 0px, 0px, 0px);
+    background-color: @footer-green;
+    .product{
+      float: left;
+      width: 195px;
+      height: 47px;
+      margin: 8px 0 8px 0;
+
+      input[type=checkbox]{
+        float: left;
+        margin: 15px 6px 0 20px;
+      }
+      label{
+        display: table;
+        float: left;
+        width: 155px;
+
+        .prod-icon{
+          float: left;
+        }
+        span{
+          height: 47px;
+          display: table-cell;
+          vertical-align: middle;
+          padding-left: 6px;
+          font-size: 11px;
+          max-width: 100px;
+        }
+      }
+    }
+  }
+  .widget-tip{
+    float: left;
+    padding: 8px 8px 8px 15px;
+    background-color: @footer-blue;
+    font-size: 14px;
+    font-family: @open-sans;
+    color: @blue;
+    line-height: 14px;
+    width: 390px;
+    .border-radius(0px, 8px, 0px, 0px);
+    a{
+      text-decoration: underline;
+    }
+    &:before{
+      content: " ";
+      display: block;
+      float: left;
+      margin-right: 6px;
+      width: 14px;
+      height: 14px;
+      background-image: url("@{img}/suggestion-circle.png");
+    }
+  }
+  .widget-title{
+    height: 160px;
+    position: relative;
+    z-index: -1;
+    background-color: @green;
+    .border-radius(8px, 8px, 0px, 0px);
+
+    span{
+      position: absolute;
+      top: 70px;
+      right: -56px;
+      color: #fff;
+      text-transform: uppercase;
+      font-family: @open-sans;
+      font-size: 12px;
+      cursor: pointer;
+      .rotation(90deg);
+    }
+  }
+}
+
+.tip-widget{
+  background-color: @footer-blue;
+  padding: 20px;
+  text-align: center;
+  .rounded(8px);
+  color: @blue;
+  font-family: @open-sans;
+  &.fixed{
+    position: fixed;
+    z-index: 2000;
+    top: 300px;
+    left: 30px;
+    width: 174px;
+  }
+  &.column{
+
+  }
+  .tip-title{
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+  p{
+    margin-top: 20px;
+    margin-bottom: 30px;
+    text-align: left;
+    font-size: 13px;
+    line-height: 15px;
+  }
+}

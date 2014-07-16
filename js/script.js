@@ -12,6 +12,4 @@ $(document).ready(function() {
   $(document).ready(function() {
     $(".info.active").tooltip();
   });
-  
-  PointerEventsPolyfill.initialize({});
 });

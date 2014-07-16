@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-     <link rel="stylesheet" href="css/jquery-ui.css">
+    <link rel="stylesheet" href="css/jquery-ui.css">
     <link rel="stylesheet/less" type="text/css" href="less/elements.less" />
     <link rel="stylesheet/less" type="text/css" href="less/style.less" />
     <link rel="stylesheet/less" type="text/css" href="less/definitions.less" />
@@ -17,9 +17,10 @@
     <link rel="stylesheet/less" type="text/css" href="less/footer.less" />
     <link rel="stylesheet/less" type="text/css" href="less/general.less" />
     <link rel="stylesheet/less" type="text/css" href="less/selection-strip.less" />
+    <link rel="stylesheet/less" type="text/css" href="less/widgets.less" />
     <link href='http://fonts.googleapis.com/css?family=Handlee|Open+Sans:400,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
   </head>
-  <body ng-controller="sliderDemoCtrl">
+  <body>
     <div class="container">
 
       <header class="row">
@@ -42,7 +43,7 @@
       <div class="selection-strip row">
         <div class="selected-prod">
           <div class="text">
-            You chose this insurances. <a href="#">Add more</a>
+            You chose this insurances. <a href="#" ng-click="showVariable = 'active'">Add more</a>
           </div>
           <div class="icon-holder">
             <div class="prod-icon selected big">
@@ -72,6 +73,63 @@
       </div>
 
       <div class="content row">
+
+        <div class="final-area tip">
+          <div class="final-tip">
+            <div class="tip-title">Save at least</div>
+            <div class="tip-value">-15%</div>
+            <div class="tip-text">on your current insurance</div>
+          </div>
+          <div class="final-selection">
+
+            <div class="final-single">
+
+              <div class="prod-icon selected big valid">
+                <div class="checkmark"></div>
+                <div class="icon car"></div>
+                <div class="second-prod"></div>
+              </div>
+
+              <div class="final-title">
+                Accident insurance
+              </div><!-- /final-title -->
+              <div class="final-short">
+                Mercedes S500 2014
+              </div><!-- /final-short -->
+            </div><!-- /final-single -->
+
+            <div class="final-single">
+              <div class="prod-icon selected big valid">
+                <div class="checkmark"></div>
+                <div class="icon car"></div>
+                <div class="second-prod"></div>
+              </div>
+              <div class="final-title">
+                Accident
+              </div><!-- /final-title -->
+              <div class="final-short">
+                Mercedes S500 2014
+              </div><!-- /final-short -->
+            </div>
+            <div class="final-single">
+              <div class="prod-icon selected big valid">
+                <div class="checkmark"></div>
+                <div class="car-icon">
+                  <img src="img/test-icon.png" alt="" />
+                </div>
+              </div>
+              <div class="final-title">
+                Accident insurance
+              </div><!-- /final-title -->
+              <div class="final-short">
+                Mercedes S500 2014
+              </div><!-- /final-short -->
+            </div>
+            <div class="clearfix"></div>
+          </div><!-- /final-selection -->
+          <div class="clearfix"></div>
+        </div>
+
         <form name="development">
 
           <div class="col-md-6 col-sm-6 col-xs-12 form-hold left">
@@ -94,12 +152,12 @@
                   <label for="car_year">Choose year</label>
                   <span class="info active" data-toggle="tooltip" title="Tooltip for the car name"></span>
                   <div class="styled-select">
-                    <select name="car_year" id="car_year" class="text ng-pristine">
+                    <select name="car_year" id="car_year" class="text" ng-model="car_year">
                       <option value="">Choose year</option>
                       <option value="0">1975</option>
                       <option value="1">1984</option>
                     </select>
-                    <span></span>
+                    <svg></svg>
                   </div>
                   <span class="validation_checkmark"></span>
                   <div class="validation_msg">Please insert car name.</div>
@@ -118,11 +176,11 @@
                   <span class="info" data-toggle="tooltip" title="Tooltip for radio buttons"></span>
                   <div class="styled-check">
                     <input type="radio" name="rad" id="radio1" class="css-checkbox" />
-                    <label for="radio1" class="css-label radGroup1 radGroup1">Option 1</label>
+                    <label for="radio1" class="text css-label radGroup1 radGroup1">Option 1</label>
                   </div>
                   <div class="styled-check">
                     <input type="radio" name="rad" id="radio2" class="css-checkbox" />
-                    <label for="radio2" class="css-label radGroup1 radGroup1">Option 2</label>
+                    <label for="radio2" class="text css-label radGroup1 radGroup1">Option 2</label>
                   </div>
                   <div class="clearfix"></div>
                 </div><!-- /input-row -->
@@ -136,21 +194,21 @@
                 <div class="input-row">
                   <label for="car_desc">What is the brand of your car?</label>
                   <span class="info" data-toggle="tooltip" title="Tooltip for the car name"></span>
-                  <textarea name="car_desc" id="car_desc"></textarea>
+                  <textarea name="car_desc" id="car_desc" class="text"></textarea>
                   <span class="validation_checkmark"></span>
                   <div class="validation_msg">Please insert car name.</div>
                 </div><!-- /input-row -->
 
-                <div class="input-row">
+                <div class="input-row" ng-controller="sliderDemoCtrl">
                   <label for="slider1">Step slider with event listeners (see console log)</label>
                   <span class="info active" data-toggle="tooltip" title="Tooltip for the car name"></span>
                   <div ui-slider min="0" max="200000" ng-model="slider1"></div>
                   <input name="slider1" id="slider1" type="text" ng-model="slider1" class="slider-input" ng-init="slider1 = 0" />	
                   <div class="clearfix"></div>
                 </div><!-- /input-row -->
-                
+
                 <div class="input-row">
-                  
+
                 </div>
 
               </div><!-- /box-elements -->
@@ -164,17 +222,17 @@
                 Insurance information:
               </div><!-- /box-title -->
               <div class="box-elements">
-                
+
                 <div class="input-row">
                   <label for="test"></label>
-                  <span class="info active"></span>
+                  <span class="info active" data-toggle="tooltip" title="Tooltip for the car name"></span>
                   <div class="input-overlay">
-                    <input type="text" id="test" class="medium" />
+                    <input type="text" id="test" class="medium text" />
                     <span>m<sup>2</sup></span>
                   </div>
                   <div class="clearfix"></div>
                 </div>
-                
+
               </div><!-- /box-elements -->
             </div><!-- /box -->
           </div><!-- /form-hold -->
@@ -225,11 +283,72 @@
         </div><!-- /save-later -->
 
       </footer>
-    </div>
+    </div><!-- /container -->
+
+    <div class="selection-widget" ng-class="showVariable">
+      <div class="selection">
+        <div class="product">
+          <input type="checkbox" id="product_car" />
+          <label for="product_car">
+            <div class="prod-icon selected small valid">
+              <div class="checkmark"></div>
+              <div class="icon car"></div>
+              <div class="second-prod"></div>
+            </div><!-- /prod-icon -->
+            <span>Car se verc g insurance</span>
+          </label>
+        </div><!-- /product -->
+
+        <div class="product">
+          <input type="checkbox" id="product_car" />
+          <label for="product_car">
+            <div class="prod-icon normal small">
+              <div class="checkmark"></div>
+              <div class="icon car"></div>
+              <div class="second-prod"></div>
+            </div><!-- /prod-icon -->
+            <span>Car se verc g insurance</span>
+          </label>
+        </div><!-- /product -->
+
+        <div class="product">
+          <input type="checkbox" id="product_car" />
+          <label for="product_car">
+            <div class="prod-icon normal small">
+              <div class="checkmark"></div>
+              <div class="icon car"></div>
+              <div class="second-prod"></div>
+            </div><!-- /prod-icon -->
+            <span>Car se verc g insurance</span>
+          </label>
+        </div><!-- /product -->
+
+        <div class="clearfix"></div>
+      </div><!-- /selection -->
+      <div class="widget-tip">
+        We recomend this insurances for you. <a href="#">Why?</a>
+      </div>
+      <div class="widget-title" ng-click="showVariable = ''">
+        <span>Add more insurances</span>
+      </div>
+    </div><!-- /selection-widget -->
+    
+    <div class="tip-widget fixed">
+      <div class="tip-title">Our TIP</div>
+      <div class="prod-icon suggested selected big">
+        <div class="icon boat"></div>
+        <div class="hand"></div>
+      </div>
+      <p>If you collect your insurance with a company you can usually get a combined discount. If you need more insurance, we suggest that you already choose these now and obtain additional discount. </p>
+      <button class="btn tip">SHOW ME</button>
+    </div><!-- /tip-widget -->
+
+
     <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/1.7.3/less.min.js"></script>
     <script src="//code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script>
     <script src="//code.jquery.com/ui/1.10.4/jquery-ui.min.js" type="text/javascript"></script>
-    <script data-require="angular.js@1.0.x" src="http://code.angularjs.org/1.2.20/angular.min.js" data-semver="1.2.20"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.15/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.15/angular-animate.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular-touch.min.js"></script>
     <script type="text/javascript" src="js/angular-slider.js"></script>
     <script type="text/javascript" src="js/angular-date.js"></script>
@@ -237,5 +356,7 @@
     <script type="text/javascript" src="js/pointer-events.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
     <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript">
+    </script>
   </body>
 </html>

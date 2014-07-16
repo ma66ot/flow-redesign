@@ -1,4 +1,4 @@
-var app = angular.module('sliderDemoApp', ['ui.slider', 'ui.date']);
+var app = angular.module('sliderDemoApp', ['ui.slider', 'ui.date','ngAnimate']);
 app.factory('colorpicker', function() {
   function hexFromRGB(r, g, b) {
     var hex = [r.toString(16), g.toString(16), b.toString(16)];

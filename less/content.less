@@ -71,7 +71,7 @@ and open the template in the editor.
     margin-top: 10px;
     padding: 20px 0 20px 0;
     background-color: @light-green;
-    .rounded(10px);
+    .rounded(8px);
 
     .product{
       height: 70px;
@@ -108,10 +108,12 @@ and open the template in the editor.
     &.left{
       padding-left: 0;
       padding-right: 10px;
+      margin-top: 34px;
     }
     &.right{
       padding-right: 0;
       padding-left: 10px;
+      margin-top: 34px;
     }
     .box{
       position: relative;
@@ -150,6 +152,65 @@ and open the template in the editor.
         }
         .box-divider{
           background-color: @lighter-green;
+        }
+      }
+    }
+  }
+  .final-area{
+    .final-tip{
+      display:none;
+    }
+    &.tip{
+      .final-tip{
+        display: block;
+        float: left;
+        height: 140px;
+        width: 140px;
+        background-color: @footer-blue;
+        text-align: center;
+        padding: 15px;
+        color: @blue;
+        font-family: @open-sans;
+        .rounded(8px);
+        
+        .tip-title{
+          font-size: 14px;
+          font-weight: 600;
+        }
+        .tip-value{
+          font-size: 36px;
+          font-weight: 600;
+        }
+        .tip-text{
+          font-size: 13px;
+        }
+      }
+      .final-selection{
+        float: left;
+        margin-left: 20px;
+      }
+    }
+    .final-selection{
+      height: 140px;
+      background-color: @footer-green;
+      padding: 20px 10px 20px 10px;
+      margin-bottom: 20px;
+      .rounded(8px);
+
+      .final-single{
+        float: left;
+        height: 120px;
+        margin: 0 10px 0 10px;
+        width: 130px;
+        text-align: center;
+        font-size: 12px;
+        font-family: @open-sans;
+        .final-title{
+
+          font-weight: 600;
+        }
+        .final-short{
+          color: @green;
         }
       }
     }
